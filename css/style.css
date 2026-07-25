@@ -293,16 +293,51 @@ ul { list-style: none; margin: 0; padding: 0; }
   align-items: center;
 }
 .trayectoria-map {
-  border-radius: var(--radius);
+  position: relative;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  border: 1px solid var(--blue-mid);
 }
 .trayectoria-map-img {
   width: 100%;
   height: 100%;
+  min-height: 320px;
   object-fit: cover;
   display: block;
+  border-radius: 24px;
+}
+.trayectoria-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18,36,92,0) 40%, rgba(18,36,92,0.6) 100%);
+  border-radius: 24px;
+}
+.trayectoria-map-badge {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow);
+  z-index: 2;
+}
+.trayectoria-map-badge strong {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.trayectoria-map-badge span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
 }
 .trayectoria-content .institutions-list {
   grid-template-columns: 1fr;
